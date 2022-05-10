@@ -1,0 +1,86 @@
+{
+  "name": "chas",
+  "private": true,
+  "version": "0.0.0",
+  "description": "POS Using vue+vite with electron",
+  "author": "Denta Maulana",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:start": "electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "axios": "^0.26.1",
+    "bootstrap": "^5.1.3",
+    "electron-squirrel-startup": "^1.0.0",
+    "jspdf": "^2.5.1",
+    "jspdf-html2canvas": "^1.4.9",
+    "lowdb": "^3.0.0",
+    "nanoid": "^3.3.2",
+    "pouchdb": "^7.3.0",
+    "print-js": "^1.6.0",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "electron": "^18.0.4",
+    "electron-builder": "^23.0.3",
+    "electron-packager": "^15.5.1",
+    "vite": "^2.9.2"
+  },
+  "build": {
+    "appId": "com.dntffm.chas",
+    "productName": "Chas - Assalam Shop",
+    "win": {
+      "target": "NSIS"
+    },
+    "directories": {
+      "output": "build"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "chas"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

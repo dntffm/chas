@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Pocari Sweat",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 2,
+      "name": "Gula",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 3,
+      "name": "Tepung Terigu",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 4,
+      "name": "Tempe",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 5,
+      "name": "Ayam Goreng",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 5,
+      "name": "Gudang Garam Merah",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 5,
+      "name": "Cenil",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 5,
+      "name": "Garam",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 5,
+      "name": "Wafer",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 5,
+      "name": "Nabati",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 5,
+      "name": "Tali Tambang",
+      "price": 10000,
+      "sku": 111
+    },
+    {
+      "id": 5,
+      "name": "Tepung Kanji",
+      "price": 10000,
+      "sku": 111
+    }
+  ]
+}
