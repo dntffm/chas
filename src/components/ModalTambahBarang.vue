@@ -14,8 +14,8 @@
                             <input type="text" class="form-control" v-model="payload.name" placeholder="Cth: Kecap sedap 100ml">
                         </div>
                         <div class="mb-3">
-                            <label for="name" class="col-form-label">Kategori Barang</label>
-                            <input type="text" class="form-control" v-model="payload.category_id" placeholder="Cth: Kecap sedap 100ml">
+                            <label for="name" class="col-form-label">Lokasi</label>
+                            <input type="text" class="form-control" v-model="payload.location" placeholder="Cth: Kecap sedap 100ml">
                         </div>
                         <div class="mb-3">
                             <label for="name" class="col-form-label">No. Barang</label>
@@ -55,16 +55,27 @@ export default {
                 'sku': null,
                 'price': null,
                 'uom': null,
-                'category_id': 1,
+                'location': null,
                 'profit': 0
             }
         }
     },
     methods:{
         async create(){
-            await axios.post(`http://guarded-journey-48387.herokuapp.com/public/api/item`, this.payload)
+            await axios.post(`http://guarded-journey-48387.herokuapp.com/public/api/item`, this.payload, {
+                    headers: {
+                        Authorization: 'Bearer ' +localStorage.getItem('token')
+                    }
+                })
             .then((res) => {
-                console.log(res)
+                alert('Barang Berhasil Ditambahkan')
+                window.location.reload()
+                this.name = ''
+                this.sku = null
+                this.price = null
+                this.uom = null
+                this.location = null
+                this.profit = null
             })
             .catch((err) => {
                 console.log(err)

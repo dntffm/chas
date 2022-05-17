@@ -20,7 +20,7 @@
                                             <th scope="col" style="width: 10%">#</th>
                                             <th scope="col" style="width: 20%">Tanggal</th>
                                             <th scope="col" style="width: 20%">Nama Barang</th>
-                                            <th scope="col" style="width: 20%">Kategori</th>
+                                            <th scope="col" style="width: 20%">Kode Barang</th>
                                             <th scope="col" style="width: 20%">Harga</th>
                                             <th scope="col" style="width: 10%">Jumlah Barang</th>
                                             <th scope="col" style="width: 10%">Total</th>
@@ -30,9 +30,9 @@
                                     <tbody>
                                         <tr v-for="(i,index) in datas" :key="index">
                                             <td>{{index+1}}</td>
-                                            <td>{{i.created_at}}</td>
+                                            <td>{{this.helperDate(i.created_at)}}</td>
                                             <td>{{i.item.name}}</td>
-                                            <td>{{i.item.item_category}}</td>
+                                            <td>{{i.item.sku}}</td>
                                             <td>{{i.item.price}}</td>
                                             <td>{{i.qty}}</td>
                                             <td>{{i.total}}</td>

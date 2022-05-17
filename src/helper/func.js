@@ -7,7 +7,10 @@ var helperFunc = {
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         } else if(value === 0 || value === '0' || isNaN(value)){return '0'}
     },
-
+    helperDate(date){
+        let datee = new Date(date)
+        return datee.getDate()+'/'+datee.getMonth()+'/'+datee.getFullYear()+' '+datee.getHours()+':'+datee.getMinutes()+':'+datee.getSeconds()
+    }
 }
 
 export default helperFunc

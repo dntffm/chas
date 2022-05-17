@@ -15,7 +15,9 @@ import router from './router'
 
 const app = createApp(App)
 
-app.mixin(helperFunc)
+app.mixin({
+    methods: helperFunc
+}) 
 app.use(router)
 
 setTimeout(() => {

@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex flex-column flex-shrink-0 bg-body" style="width: 7.5rem;min-height: 100vh">
-        <a href="/" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip"
+        <a class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip"
             data-bs-placement="right" data-bs-original-title="Icon-only">
             <img src="/logo.svg" alt="">
             <span class="visually-hidden">Icon-only</span>

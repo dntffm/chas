@@ -20,7 +20,7 @@
                         <h3 class="fw-bold">Daftar Barang</h3>
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTambahBarang">Tambah Barang</button>
                     </div>
-                    <div class="col-4 mb-3" v-for="(i,index) in items" :key="index">
+                    <div class="col-4 mb-3 mt-3" v-for="(i,index) in items" :key="index">
                         <div class="bg-body rounded-3 cursor-pointer p-2">
                             <div class="row p-3">
                                 <div class="d-flex flex-column align-items-center text-center">
@@ -28,6 +28,7 @@
                                             style="height: 72px;">
                                     <div class="mx-2">
                                         <h6 class="fw-bold">{{i.name}}</h6>
+                                        <p>{{i.sku}} - {{i.location}}</p>
                                         <span>Rp. {{parseFloat(i.price) + parseFloat(i.profit ?? 0)}}</span>
                                     </div>
                                 </div>
@@ -50,6 +51,7 @@
                                             style="height: 72px;">
                                     <div class="mx-3 d-flex flex-column">
                                         <h6 class="fw-bold">{{i.name}}</h6>
+                                        <p>{{i.sku}}</p>
                                         <span>Rp. {{parseFloat(i.price)+parseFloat(i.profit) ?? 0 * i.qty}}</span>
                                         <input class="quantity mt-2" min="0" name="quantity" v-model="i.qty" type="number">
                                     </div>
@@ -153,9 +155,14 @@ export default {
                this.bills[index].total = e.price * e.qty
            })
 
-           axios.post(`http://guarded-journey-48387.herokuapp.com/public/api/bill`, {'bills':this.bills})
+           axios.post(`http://guarded-journey-48387.herokuapp.com/public/api/bill`, {'bills':this.bills}, {
+                    headers: {
+                        Authorization: 'Bearer ' +localStorage.getItem('token')
+                    }
+                })
            .then((response) => {
-               console.log(response)
+               window.print()
+               this.bills = []
            })
            .catch((err) => {
                console.log(err)
